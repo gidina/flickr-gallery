@@ -5,7 +5,6 @@ import './Galeria.css';
 
 const GALLERY_ID = "117615905-72157695735361740";
 const API_URL_GET_PHOTOS = `https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${API_KEY}&gallery_id=${GALLERY_ID}&extras=description%2C+media&format=json&nojsoncallback=1`;
-
 const midaFotos = "m";
 
 const photoBox = foto => {
@@ -31,11 +30,7 @@ class Galeria extends Component {
   componentDidMount() {
     fetch(API_URL_GET_PHOTOS)
       .then(response => response.json())
-      .then(myJson => this.setState({ fotosGaleria: myJson }));
-
-    // fetch("https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=1ffb89f5dcaa0f0c96c86fd180deade0&photo_id=34701918214&format=json&nojsoncallback=1")
-    //   .then(response => response.json())
-    //   .then(myJson => console.log(myJson.photo.description._content));
+      .then(json => this.setState({ fotosGaleria: json }));
   }
   render() {
     const { fotosGaleria } = this.state;
