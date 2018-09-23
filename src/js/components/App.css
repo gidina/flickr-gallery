@@ -1,0 +1,22 @@
+/*  SCROLLBAR
+-------------------*/
+::-webkit-scrollbar {
+  width: 0.2em;
+  background: #e74c3c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #fff;
+}
+
+body {
+  background: #EEE;
+  overflow-X: hidden;
+  font-size: 13px;
+  font-family: 'Metrophobic', sans-serif;
+  font-weight: 400;
+}
