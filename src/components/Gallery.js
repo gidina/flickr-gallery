@@ -3,10 +3,26 @@ import { redColor, blueColor } from "../config";
 import Pagination from "./Pagination";
 import "./Gallery.css";
 
-const midaFotos = "b";
+const breakpointDesktop = 1047;
 
 class Gallery extends Component {
-  state = { currentPhotos: this.props.photos };
+  state = {
+    currentPhotos: this.props.photos,
+    isDesktop: window.innerWidth > breakpointDesktop
+  };
+  componentDidMount = () => {
+    window.addEventListener("resize", () => {
+      const isDesktop = window.innerWidth > breakpointDesktop;
+      const currentPhotos = isDesktop
+        ? [...this.state.currentPhotos]
+        : this.props.photos;
+      this.setState({
+        ...this.state,
+        currentPhotos,
+        isDesktop
+      });
+    });
+  };
   onPageChange = (startIndex, endIndex) => {
     const { photos } = this.props;
     const currentPhotos = photos.slice(startIndex, endIndex + 1);
@@ -14,7 +30,7 @@ class Gallery extends Component {
   };
   render = () => {
     const { photos, onClickPhoto } = this.props;
-    const { currentPhotos } = this.state;
+    const { currentPhotos, isDesktop } = this.state;
     return (
       <Fragment>
         <div className="gallery">
@@ -45,7 +61,7 @@ class Gallery extends Component {
                 <img
                   src={`https://farm${foto.farm}.staticflickr.com/${
                     foto.server
-                  }/${foto.id}_${foto.secret}_${midaFotos}.jpg`}
+                  }/${foto.id}_${foto.secret}_b.jpg`}
                   alt=""
                 />
                 <span>
@@ -56,7 +72,12 @@ class Gallery extends Component {
             </div>
           ))}
         </div>
-        <Pagination numItems={photos.length} onPageChange={this.onPageChange} />
+        {isDesktop ? (
+          <Pagination
+            numItems={photos.length}
+            onPageChange={this.onPageChange}
+          />
+        ) : null}
       </Fragment>
     );
   };
