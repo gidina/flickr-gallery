@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import { redColor, blueColor } from "../config";
+import { primaryColor, secondaryColor } from "../config";
 
 const GalleryItem = ({photo, onClick}) => {
     return (
@@ -9,7 +9,7 @@ const GalleryItem = ({photo, onClick}) => {
             <span className="gallery_item_preview">
                 <button>Click to view</button>
                 <svg
-                    fill={photo.media === "video" ? blueColor : redColor}
+                    fill={photo.media === "video" ? secondaryColor : primaryColor}
                     className="gallery_top"
                     viewBox="0 3 60 20"
                 >

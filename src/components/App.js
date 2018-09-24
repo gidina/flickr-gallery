@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import Loader from "./Loader";
 import Gallery from "./Gallery";
 import Modal from "./Modal";
-import { API_KEY, redColor } from "../config";
+import { API_KEY, primaryColor } from "../config";
 import "./App.css";
 
 const GALLERY_ID = "117615905-72157695735361740";
@@ -80,7 +80,7 @@ class App extends Component {
   render = () => {
     const { isLoading, fotosGaleria } = this.state;
 
-    if (isLoading) return <Loader color={redColor} />;
+    if (isLoading) return <Loader color={primaryColor} />;
     
     return (
       <Fragment>

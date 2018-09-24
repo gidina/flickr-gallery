@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 import Loader from "./Loader";
 import "./Modal.css";
-import { blueColor } from "../config";
+import { secondaryColor } from "../config";
 
 const Modal = ({ isLoading, photo, onClose }) => {
   return (
     <div className="gallery_item_full">
       {
         isLoading ? 
-        <Loader color={blueColor} /> : 
+        <Loader color={secondaryColor} /> : 
         <Fragment>
           <span className="close" onClick={() => onClose()}>
             &times;
