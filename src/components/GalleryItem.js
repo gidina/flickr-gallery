@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import { redColor, blueColor } from "../config";
 
 const GalleryItem = ({photo, onClick}) => {
     return (
-        <div className="gallery_item" onClick={() => onClick(photo)}>
+        <div className="gallery_item" onClick={onClick}>
             <span className="gallery_item_preview">
                 <button>Click to view</button>
                 <svg
@@ -25,5 +27,10 @@ const GalleryItem = ({photo, onClick}) => {
       </div>
     );
 }
+
+GalleryItem.propTypes = {
+    photo: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired
+};
 
 export default GalleryItem;

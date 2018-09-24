@@ -1,4 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+
 import "./Pagination.css";
 
 const defaultActive = 0;
@@ -26,7 +28,7 @@ class Pagination extends Component {
       <div className="center">
         <ul className="pagination">
           <li
-            onClick={() =>
+            onClick={() => 
               activePage > 0 ? this.onPageChangeHandler(activePage - 1) : null
             }
           >
@@ -56,9 +58,9 @@ class Pagination extends Component {
   };
 }
 
-// Pagination.protoTypes = {
-//  numItems: PropTypes.number.integer.isRequired
-// onPageChange: PropTypes.function.isRequires
-// };
+Pagination.propTypes = {
+  numItems: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired
+};
 
 export default Pagination;

@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import "./Loader.css";
 
 const Loader = ({ color }) => {
@@ -10,8 +12,8 @@ const Loader = ({ color }) => {
   );
 };
 
-// Loader.protoTypes = {
-//     color: React.PropTypes.string.isRequired
-// };
+Loader.propTypes = {
+    color: PropTypes.string.isRequired
+};
 
 export default Loader;

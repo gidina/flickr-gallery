@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import PropTypes from 'prop-types';
+
 import GalleryItem from "./GalleryItem";
 import Pagination from "./Pagination";
 import "./Gallery.css";
@@ -46,7 +48,7 @@ class Gallery extends Component {
         <div className="gallery">
           {
             currentPhotos.map(photo => 
-              <GalleryItem key={photo.id} onClick={onClickPhoto} photo={photo} />)
+              <GalleryItem key={photo.id} onClick={() => onClickPhoto(photo)} photo={photo} />)
           }
         </div>
         {
@@ -62,8 +64,9 @@ class Gallery extends Component {
   }
 }
 
-// Gallery.protoTypes = {
-//     photos: React.PropTypes.array.isRequired
-// };
+Gallery.propTypes = {
+    photos: PropTypes.array.isRequired,
+    onClickPhoto: PropTypes.func.isRequired
+};
 
 export default Gallery;
