@@ -28,8 +28,6 @@ const Modal = ({ isLoading, photo, onClose }) => {
   );
 };
 
-{/* <img src={photo.source} alt="" onClick={() => window.location.href = photo.redirectURL} /> */}
-
 // Modal.protoTypes = {
 // onClose: PropTypes.function.isRequires
 // };
