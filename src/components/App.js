@@ -37,12 +37,14 @@ class App extends Component {
   onClickPhotoItemHandler = photo => {
     const parametreCerca = photo.media === "video" ? "Video Player" : "Large";
 
+    const redirectURL = `https://www.flickr.com/photos/${photo.owner}/${photo.id}/in/gallery-${GALLERY_ID}/`;
     this.setState({
       ...this.state,
       isLoadingModal: true,
       fotoSeleccionada: {
         title: photo.title,
         description: photo.description._content,
+        redirectURL,
         isVideo: photo.media === "video"
       }
     });

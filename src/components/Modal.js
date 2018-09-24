@@ -17,7 +17,7 @@ const Modal = ({ isLoading, photo, onClose }) => {
             {photo.isVideo ? (
               <embed src={photo.source} />
             ) : (
-              <img src={photo.source} alt="" />
+              <img src={photo.source} alt="" onClick={() => window.open(photo.redirectURL)} />
             )}
             <h3>{photo.title}</h3>
             <p>{photo.description}</p>
@@ -27,6 +27,8 @@ const Modal = ({ isLoading, photo, onClose }) => {
     </div>
   );
 };
+
+{/* <img src={photo.source} alt="" onClick={() => window.location.href = photo.redirectURL} /> */}
 
 // Modal.protoTypes = {
 // onClose: PropTypes.function.isRequires

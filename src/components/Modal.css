@@ -12,6 +12,7 @@
 }
 
 .gallery_item_full img {
+  cursor: pointer;
   width: 100%;
 }
 
