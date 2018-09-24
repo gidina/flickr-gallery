@@ -9,25 +9,35 @@ class Gallery extends Component {
   state = {
     currentPhotos: this.props.photos,
     isDesktop: window.innerWidth > breakpointDesktop
-  };
-  componentDidMount = () => {
-    window.addEventListener("resize", () => {
-      const isDesktop = window.innerWidth > breakpointDesktop;
-      const currentPhotos = isDesktop
-        ? [...this.state.currentPhotos]
-        : this.props.photos;
+  }
+  resizeHandler = () => {
+    const isDesktopCurrent = window.innerWidth > breakpointDesktop;
+
+    if (this.state.isDesktop === isDesktopCurrent) return;
+    
+    if (isDesktopCurrent) {
       this.setState({
         ...this.state,
-        currentPhotos,
-        isDesktop
+        isDesktop: isDesktopCurrent
       });
+      return;
+    }
+
+    // currentPhotos se inicializa a todas la fotos cuando no es Desktop
+    this.setState({
+      ...this.state,
+      currentPhotos: this.props.photos,
+      isDesktop: isDesktopCurrent
     });
-  };
+  }
+  componentDidMount = () => {
+    window.addEventListener("resize", this.resizeHandler);
+  }
   onPageChange = (startIndex, endIndex) => {
     const { photos } = this.props;
     const currentPhotos = photos.slice(startIndex, endIndex + 1);
     this.setState({ ...this.state, currentPhotos });
-  };
+  }
   render = () => {
     const { photos, onClickPhoto } = this.props;
     const { currentPhotos, isDesktop } = this.state;
@@ -80,7 +90,7 @@ class Gallery extends Component {
         ) : null}
       </Fragment>
     );
-  };
+  }
 }
 
 // Gallery.protoTypes = {
