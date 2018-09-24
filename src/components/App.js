@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
-import Gallery from "./Gallery";
+
 import Loader from "./Loader";
+import Gallery from "./Gallery";
 import Modal from "./Modal";
 import { API_KEY, redColor } from "../config";
 import "./App.css";
