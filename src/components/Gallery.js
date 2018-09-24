@@ -49,7 +49,7 @@ class Gallery extends Component {
                   alt=""
                 />
                 <span>
-                  <h3>{foto.title}</h3>
+                  <h3>{foto.title} - {foto.ownername}</h3>
                   <p>{foto.description._content}</p>
                 </span>
               </span>

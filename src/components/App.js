@@ -6,7 +6,7 @@ import { API_KEY, redColor } from "../config";
 import "./App.css";
 
 const GALLERY_ID = "117615905-72157695735361740";
-const API_URL_GET_PHOTOS = `https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${API_KEY}&gallery_id=${GALLERY_ID}&extras=description%2C+media&format=json&nojsoncallback=1`;
+const API_URL_GET_PHOTOS = `https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=${API_KEY}&gallery_id=${GALLERY_ID}&extras=description%2C+media%2C+owner_name&format=json&nojsoncallback=1`;
 const API_URL_GET_PHOTOS_SIZES = photoId =>
   `https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=${API_KEY}&photo_id=${photoId}&format=json&nojsoncallback=1`;
 
