@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
+import GalleryItem from "./GalleryItem";
 import Pagination from "./Pagination";
 import "./Gallery.css";
-import GalleryItem from "./GalleryItem";
 
 const breakpointDesktop = 1047;
 
