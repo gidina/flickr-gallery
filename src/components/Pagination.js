@@ -20,7 +20,7 @@ class Pagination extends Component {
     const { activePage } = this.state;
     const { numItems } = this.props;
     const totalPages = numItems ? Math.trunc(numItems / numItemsPage) + 1 : 0;
-    const pagines = Array.from(Array(totalPages).keys());
+    const pagines = [...Array(totalPages).keys()];
 
     return (
       <div className="center">
