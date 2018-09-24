@@ -41,6 +41,7 @@ class Gallery extends Component {
     this.setState({ ...this.state, currentPhotos });
   }
   renderPagination = () => {
+    const { photos } = this.props;
     const { isDesktop } = this.state;
 
     if (!isDesktop) return null;
