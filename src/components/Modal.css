@@ -12,7 +12,6 @@
 }
 
 .gallery_item_full img {
-  cursor: pointer;
   width: 100%;
 }
 
@@ -40,7 +39,17 @@
 
 .box h3 {
   font-family: "Leckerli One", cursive;
-  color: #f88484;
+  color: #f55;
+  display: inline-block;
+}
+
+.box h4 {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.box h4:hover {
+  color: #f55
 }
 
 .close {
@@ -55,5 +64,5 @@
 }
 
 .close:hover {
-  color: #f88484;
+  color: #f55;
 }

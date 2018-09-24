@@ -17,9 +17,9 @@ const Modal = ({ isLoading, photo, onClose }) => {
             {photo.isVideo ? (
               <embed src={photo.source} />
             ) : (
-              <img src={photo.source} alt="" onClick={() => window.open(photo.redirectURL)} />
+              <img src={photo.source} alt="" />
             )}
-            <h3>{photo.title}</h3>
+            <h3>{photo.title}</h3> - <h4 onClick={() => window.open(photo.redirectURL)}>{photo.username}</h4>
             <p>{photo.description}</p>
           </div>
         </Fragment>

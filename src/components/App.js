@@ -44,6 +44,7 @@ class App extends Component {
       fotoSeleccionada: {
         title: photo.title,
         description: photo.description._content,
+        username: photo.ownername,
         redirectURL,
         isVideo: photo.media === "video"
       }
