@@ -36,7 +36,6 @@ class App extends Component {
   };
   onClickPhotoItemHandler = photo => {
     const parametreCerca = photo.media === "video" ? "Video Player" : "Large";
-
     const redirectURL = `https://www.flickr.com/photos/${photo.owner}/${photo.id}/in/gallery-${GALLERY_ID}/`;
     this.setState({
       ...this.state,
@@ -63,32 +62,32 @@ class App extends Component {
         });
       });
   };
+  pintaModal = () => {
+    const { fotoSeleccionada, isLoadingModal } = this.state;
+
+    if (!fotoSeleccionada) {
+      return null;
+    }
+
+    return <Modal
+      isLoading={isLoadingModal}
+      photo={fotoSeleccionada}
+      onClose={this.onClickCloseModal}
+    />
+  };
+
   render = () => {
-    const {
-      isLoading,
-      fotosGaleria,
-      fotoSeleccionada,
-      isLoadingModal
-    } = this.state;
+    const { isLoading, fotosGaleria } = this.state;
+
+    if (isLoading) return <Loader color={redColor} />;
+    
     return (
       <Fragment>
-        {isLoading ? (
-          <Loader color={redColor} />
-        ) : (
-          <Fragment>
-            <Gallery
-              photos={fotosGaleria}
-              onClickPhoto={this.onClickPhotoItemHandler}
-            />
-            {fotoSeleccionada ? (
-              <Modal
-                isLoading={isLoadingModal}
-                photo={fotoSeleccionada}
-                onClose={this.onClickCloseModal}
-              />
-            ) : null}
-          </Fragment>
-        )}
+          <Gallery
+            photos={fotosGaleria}
+            onClickPhoto={this.onClickPhotoItemHandler}
+          />
+          {this.pintaModal()}
       </Fragment>
     );
   };
