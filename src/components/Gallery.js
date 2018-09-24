@@ -40,9 +40,19 @@ class Gallery extends Component {
     const currentPhotos = photos.slice(startIndex, endIndex + 1);
     this.setState({ ...this.state, currentPhotos });
   }
+  renderPagination = () => {
+    const { isDesktop } = this.state;
+
+    if (!isDesktop) return null;
+
+    return <Pagination
+      numItems={photos.length}
+      onPageChange={this.onPageChange}
+    />
+  }
   render = () => {
-    const { photos, onClickPhoto } = this.props;
-    const { currentPhotos, isDesktop } = this.state;
+    const { onClickPhoto } = this.props;
+    const { currentPhotos } = this.state;
     return (
       <Fragment>
         <div className="gallery">
@@ -51,14 +61,7 @@ class Gallery extends Component {
               <GalleryItem key={photo.id} onClick={() => onClickPhoto(photo)} photo={photo} />)
           }
         </div>
-        {
-          isDesktop ? 
-          <Pagination
-            numItems={photos.length}
-            onPageChange={this.onPageChange}
-          /> : 
-          null
-        }
+        {this.renderPagination()}
       </Fragment>
     );
   }
