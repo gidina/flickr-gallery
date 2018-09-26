@@ -47,6 +47,7 @@ test("onClick function is triggered when div with 'gallery_item' class is clicke
         secret: 123456
     };
 
+    // Wrapper component for renderIntoDocument functional Component
     class Wrapper extends React.Component {
         render() {
             return this.props.children
@@ -54,6 +55,5 @@ test("onClick function is triggered when div with 'gallery_item' class is clicke
     }
 
     const tree = ReactTestUtils.renderIntoDocument(<Wrapper><GalleryItem photo={photoTest} onClick={onClickMock} /></Wrapper>);
-
     expect(tree.props.children.props.onClick).toEqual(onClickMock);
 });

@@ -1,8 +1,8 @@
 import React from "react";
-import Modal from "../Modal";
 import renderer from "react-test-renderer";
+import Modal from "../Modal";
 
-jest.mock("../Loader", () => "LoaderMock");
+jest.mock("../Loader");
 
 test("Renders blue (#5690F7) Loader component if isLoading property is true", () => {
     const tree = renderer

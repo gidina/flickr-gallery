@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Es renderitzen un total de pàgines corresponent al nombre de fotos total entre el nombre d'elements per pàgina 1`] = `
+<div
+  className="center"
+>
+  <ul
+    className="pagination"
+  >
+    <li
+      onClick={[Function]}
+    >
+      «
+    </li>
+    <li
+      className="active"
+      onClick={[Function]}
+    >
+      1
+    </li>
+    <li
+      className={null}
+      onClick={[Function]}
+    >
+      2
+    </li>
+    <li
+      onClick={[Function]}
+    >
+      »
+    </li>
+  </ul>
+</div>
+`;
