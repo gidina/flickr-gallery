@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders blue (#5690F7) Loader component if isLoading property is true 1`] = `
+<div
+  className="gallery_item_full"
+>
+  <LoaderMock
+    color="#5690F7"
+  />
+</div>
+`;
+
+exports[`Renders photo properties if isLoading property is false Renders 'embed' with properly source if isVideo property is true 1`] = `
+<div
+  className="gallery_item_full"
+>
+  <span
+    className="close"
+    onClick={[Function]}
+  >
+    ×
+  </span>
+  <div
+    className="box"
+  >
+    <embed
+      src="/source"
+    />
+    <h3>
+      Photo 1
+    </h3>
+     - 
+    <h4
+      onClick={[Function]}
+    >
+      username
+    </h4>
+    <p>
+      Description Photo 1
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Renders photo properties if isLoading property is false Renders 'img' with properly source if isVideo property is false 1`] = `
+<div
+  className="gallery_item_full"
+>
+  <span
+    className="close"
+    onClick={[Function]}
+  >
+    ×
+  </span>
+  <div
+    className="box"
+  >
+    <img
+      alt=""
+      src="/source"
+    />
+    <h3>
+      Photo 1
+    </h3>
+     - 
+    <h4
+      onClick={[Function]}
+    >
+      username
+    </h4>
+    <p>
+      Description Photo 1
+    </p>
+  </div>
+</div>
+`;
