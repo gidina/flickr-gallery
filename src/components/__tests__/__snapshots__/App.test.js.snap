@@ -1,37 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Si es rep l'onClose del modal, es deselecciona la foto 1`] = `
-<gallery-mock
-  onClickPhoto={[Function]}
-  photos={
-    Array [
-      Object {
-        "description": Object {
-          "_content": "Description Photo 1",
-        },
-        "farm": 1,
-        "id": 1,
-        "media": "video",
-        "secret": 123456,
-        "server": "server1",
-        "title": "Photo 1",
-      },
-      Object {
-        "description": Object {
-          "_content": "Description Photo 2",
-        },
-        "farm": 1,
-        "id": 2,
-        "media": "video",
-        "secret": 456789,
-        "server": "server1",
-        "title": "Photo 2",
-      },
-    ]
-  }
-/>
-`;
-
 exports[`Si isLoading és true, es mostra un Loader de color red (#f55) 1`] = `
 <loader-mock
   color="#f55"
@@ -50,6 +18,8 @@ exports[`Si no s'ha seleccionat cap foto, no es mostra el Modal 1`] = `
         "farm": 1,
         "id": 1,
         "media": "video",
+        "owner": "user1",
+        "ownername": "user 1",
         "secret": 123456,
         "server": "server1",
         "title": "Photo 1",
@@ -60,7 +30,9 @@ exports[`Si no s'ha seleccionat cap foto, no es mostra el Modal 1`] = `
         },
         "farm": 1,
         "id": 2,
-        "media": "video",
+        "media": "photo",
+        "owner": "user1",
+        "ownername": "user 1",
         "secret": 456789,
         "server": "server1",
         "title": "Photo 2",
@@ -68,99 +40,4 @@ exports[`Si no s'ha seleccionat cap foto, no es mostra el Modal 1`] = `
     ]
   }
 />
-`;
-
-exports[`Si s'ha seleccionat una foto i s'ha acabat la petició per obtenir les mides, es mostra el Modal 1`] = `
-Array [
-  <gallery-mock
-    onClickPhoto={[Function]}
-    photos={
-      Array [
-        Object {
-          "description": Object {
-            "_content": "Description Photo 1",
-          },
-          "farm": 1,
-          "id": 1,
-          "media": "video",
-          "secret": 123456,
-          "server": "server1",
-          "title": "Photo 1",
-        },
-        Object {
-          "description": Object {
-            "_content": "Description Photo 2",
-          },
-          "farm": 1,
-          "id": 2,
-          "media": "video",
-          "secret": 456789,
-          "server": "server1",
-          "title": "Photo 2",
-        },
-      ]
-    }
-  />,
-  <modal-mock
-    isLoading={false}
-    onClose={[Function]}
-    photo={
-      Object {
-        "description": "Description Photo 1",
-        "isVideo": true,
-        "redirectURL": "https://www.flickr.com/photos/undefined/1/in/gallery-117615905-72157695735361740/",
-        "source": "source Video Player size",
-        "title": "Photo 1",
-        "username": undefined,
-      }
-    }
-  />,
-]
-`;
-
-exports[`Si s'ha seleccionat una foto, es mostra el Modal amb la propietat isLoading a true 1`] = `
-Array [
-  <gallery-mock
-    onClickPhoto={[Function]}
-    photos={
-      Array [
-        Object {
-          "description": Object {
-            "_content": "Description Photo 1",
-          },
-          "farm": 1,
-          "id": 1,
-          "media": "video",
-          "secret": 123456,
-          "server": "server1",
-          "title": "Photo 1",
-        },
-        Object {
-          "description": Object {
-            "_content": "Description Photo 2",
-          },
-          "farm": 1,
-          "id": 2,
-          "media": "video",
-          "secret": 456789,
-          "server": "server1",
-          "title": "Photo 2",
-        },
-      ]
-    }
-  />,
-  <modal-mock
-    isLoading={true}
-    onClose={[Function]}
-    photo={
-      Object {
-        "description": "Description Photo 1",
-        "isVideo": true,
-        "redirectURL": "https://www.flickr.com/photos/undefined/1/in/gallery-117615905-72157695735361740/",
-        "title": "Photo 1",
-        "username": undefined,
-      }
-    }
-  />,
-]
 `;
