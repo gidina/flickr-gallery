@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 
+import { getPhotos, getPhotosSizes } from "./commons/consultesServidor";
 import Loader from "./Loader";
 import Gallery from "./Gallery";
 import Modal from "./Modal";
@@ -22,13 +23,22 @@ class App extends Component {
     isLoadingModal: false
   };
   componentDidMount = () => {
-    fetch(API_URL_GET_PHOTOS)
-      .then(response => response.json())
-      .then(json =>
+    // fetch(API_URL_GET_PHOTOS)
+    //   .then(response => response.json())
+    //   .then(json =>
+    //     this.setState({
+    //       ...this.state,
+    //       isLoading: false,
+    //       fotosGaleria: json.photos.photo
+    //     })
+    //   );
+
+    getPhotos(API_URL_GET_PHOTOS)
+      .then(dades =>
         this.setState({
           ...this.state,
           isLoading: false,
-          fotosGaleria: json.photos.photo
+          fotosGaleria: dades.photos.photo
         })
       );
   };
@@ -50,15 +60,27 @@ class App extends Component {
       }
     });
 
-    fetch(API_URL_GET_PHOTOS_SIZES(photo.id))
-      .then(response => response.json())
-      .then(json => {
+    // fetch(API_URL_GET_PHOTOS_SIZES(photo.id))
+    //   .then(response => response.json())
+    //   .then(json => {
+    //     this.setState({
+    //       ...this.state,
+    //       isLoadingModal: false,
+    //       fotoSeleccionada: {
+    //         ...this.state.fotoSeleccionada,
+    //         source: getSourceByParam(json.sizes.size, parametreCerca)
+    //       }
+    //     });
+    //   });
+
+    getPhotosSizes(API_URL_GET_PHOTOS_SIZES(photo.id))
+      .then(dades => {
         this.setState({
           ...this.state,
           isLoadingModal: false,
           fotoSeleccionada: {
             ...this.state.fotoSeleccionada,
-            source: getSourceByParam(json.sizes.size, parametreCerca)
+            source: getSourceByParam(dades.sizes.size, parametreCerca)
           }
         });
       });
