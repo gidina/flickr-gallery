@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Desktop resolution (>1047): 'Pagination' is rendered 1`] = `
+Array [
+  <div
+    className="gallery"
+  >
+    <gallery-item-mock
+      onClick={[Function]}
+      photo={
+        Object {
+          "description": Object {
+            "_content": "Description Photo 1",
+          },
+          "farm": 1,
+          "id": 1,
+          "media": "video",
+          "secret": 123456,
+          "server": "server1",
+          "title": "Photo 1",
+        }
+      }
+    />
+    <gallery-item-mock
+      onClick={[Function]}
+      photo={
+        Object {
+          "description": Object {
+            "_content": "Description Photo 2",
+          },
+          "farm": 1,
+          "id": 2,
+          "media": "video",
+          "secret": 456789,
+          "server": "server1",
+          "title": "Photo 2",
+        }
+      }
+    />
+  </div>,
+  <PaginationMock
+    numItems={2}
+    onPageChange={[Function]}
+  />,
+]
+`;
+
+exports[`Mobile or Tablet resolution (<=1047): 'Pagination' isn't rendered 1`] = `
+<div
+  className="gallery"
+>
+  <gallery-item-mock
+    onClick={[Function]}
+    photo={
+      Object {
+        "description": Object {
+          "_content": "Description Photo 1",
+        },
+        "farm": 1,
+        "id": 1,
+        "media": "video",
+        "secret": 123456,
+        "server": "server1",
+        "title": "Photo 1",
+      }
+    }
+  />
+  <gallery-item-mock
+    onClick={[Function]}
+    photo={
+      Object {
+        "description": Object {
+          "_content": "Description Photo 2",
+        },
+        "farm": 1,
+        "id": 2,
+        "media": "video",
+        "secret": 456789,
+        "server": "server1",
+        "title": "Photo 2",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Renders as many 'GalleryItem' as photos recived 1`] = `
+<div
+  className="gallery"
+>
+  <gallery-item-mock
+    onClick={[Function]}
+    photo={
+      Object {
+        "description": Object {
+          "_content": "Description Photo 1",
+        },
+        "farm": 1,
+        "id": 1,
+        "media": "video",
+        "secret": 123456,
+        "server": "server1",
+        "title": "Photo 1",
+      }
+    }
+  />
+  <gallery-item-mock
+    onClick={[Function]}
+    photo={
+      Object {
+        "description": Object {
+          "_content": "Description Photo 2",
+        },
+        "farm": 1,
+        "id": 2,
+        "media": "video",
+        "secret": 456789,
+        "server": "server1",
+        "title": "Photo 2",
+      }
+    }
+  />
+</div>
+`;

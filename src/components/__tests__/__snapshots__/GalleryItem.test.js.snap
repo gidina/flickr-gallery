@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly with photo properties. If photo.media is 'video', svg must be blue (#5690F7) 1`] = `
+<div
+  className="gallery_item"
+  onClick={[Function]}
+>
+  <span
+    className="gallery_item_preview"
+  >
+    <button>
+      Click to view
+    </button>
+    <svg
+      className="gallery_top"
+      fill="#5690F7"
+      viewBox="0 3 60 20"
+    >
+      <path
+        d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"
+      />
+    </svg>
+    <img
+      alt=""
+      src="https://farm1.staticflickr.com/server1/1_123456_b.jpg"
+    />
+    <span>
+      <h3>
+        Photo 1
+      </h3>
+      <p>
+        Description Photo 1
+      </p>
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Renders correctly with photo properties. If photo.media is different to 'video', svg must be red (#f55) 1`] = `
+<div
+  className="gallery_item"
+  onClick={[Function]}
+>
+  <span
+    className="gallery_item_preview"
+  >
+    <button>
+      Click to view
+    </button>
+    <svg
+      className="gallery_top"
+      fill="#f55"
+      viewBox="0 3 60 20"
+    >
+      <path
+        d="M 0.65359477,1.3817905 C 60.201925,8.44316 121.92863,11.583451 175.81699,28.832771 l 0.6536,-28.10457531 z"
+      />
+    </svg>
+    <img
+      alt=""
+      src="https://farm1.staticflickr.com/server1/1_123456_b.jpg"
+    />
+    <span>
+      <h3>
+        Photo 1
+      </h3>
+      <p>
+        Description Photo 1
+      </p>
+    </span>
+  </span>
+</div>
+`;
