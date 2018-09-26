@@ -28,7 +28,7 @@ module.exports = {
         query: {
           name: "[path][name].[hash:8].[ext]"
         }
-      }
+      },
     ]
   },
   plugins: [
