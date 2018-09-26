@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
+import { secondaryColor } from "../config";
 import Loader from "./Loader";
 import "./Modal.css";
-import { secondaryColor } from "../config";
 
 const Modal = ({ isLoading, photo, onClose }) => 
   <div className="gallery_item_full">

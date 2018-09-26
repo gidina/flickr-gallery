@@ -1,11 +1,11 @@
 import React from "react";
-import Gallery from "../Gallery";
 import renderer from "react-test-renderer";
+import Gallery from "../Gallery";
 import ReactTestUtils from "react-dom/test-utils";
 import GalleryItem from "../GalleryItem";
 
-jest.mock("../GalleryItem", () => "gallery-item-mock");
-jest.mock("../Pagination", () => "PaginationMock");
+jest.mock("../GalleryItem");
+jest.mock("../Pagination");
 
 window.resizeTo = (width, height) => {
     global.window.innerWidth = width || global.window.innerWidth;
@@ -31,18 +31,79 @@ const photosTest = [
         farm: 1,
         server: "server1",
         secret: 456789
+    },
+    {
+        id: 3,
+        title: "Photo 3",
+        description: { _content: "Description Photo 3" },
+        media: "video",
+        farm: 3,
+        server: "server3",
+        secret: 323456
+    },
+    {
+        id: 4,
+        title: "Photo 4",
+        description: { _content: "Description Photo 4" },
+        media: "video",
+        farm: 1,
+        server: "server1",
+        secret: 456789
+    },
+    {
+        id: 5,
+        title: "Photo 5",
+        description: { _content: "Description Photo 5" },
+        media: "video",
+        farm: 5,
+        server: "server5",
+        secret: 123456
+    },
+    {
+        id: 6,
+        title: "Photo 6",
+        description: { _content: "Description Photo 6" },
+        media: "video",
+        farm: 1,
+        server: "server1",
+        secret: 456789
+    },
+    {
+        id: 7,
+        title: "Photo 7",
+        description: { _content: "Description Photo 7" },
+        media: "video",
+        farm: 7,
+        server: "server7",
+        secret: 363456
+    },
+    {
+        id: 8,
+        title: "Photo 8",
+        description: { _content: "Description Photo 8" },
+        media: "video",
+        farm: 1,
+        server: "server1",
+        secret: 856789
+    },
+    {
+        id: 9,
+        title: "Photo 9",
+        description: { _content: "Description Photo 9" },
+        media: "video",
+        farm: 1,
+        server: "server1",
+        secret: 856789
     }
 ];
 
-// photos: PropTypes.array.isRequired,
-// onClickPhoto: PropTypes.func.isRequired
 const breakpointDesktop = 1047;
 
 test("Renders as many 'GalleryItem' as photos recived", () => {
-    const tree = renderer
-        .create(<Gallery photos={photosTest} onClickPhoto={() => {}} />)
-        .toJSON();
-    expect(tree).toMatchSnapshot();
+    const tree = ReactTestUtils.renderIntoDocument(<Gallery photos={photosTest} onClickPhoto={() => {}} />);
+    const galleryItems = ReactTestUtils.scryRenderedComponentsWithType(tree, GalleryItem);
+
+    expect(galleryItems.length).toEqual(photosTest.length);
 });
 
 test(`Desktop resolution (>${breakpointDesktop}): 'Pagination' is rendered`, () => {
@@ -65,12 +126,16 @@ test(`Mobile or Tablet resolution (<=${breakpointDesktop}): 'Pagination' isn't r
 
 test("onClick GalleryItem, argument: photo", () => {
     const onClickPhotoMock = jest.fn();
-    const tree = ReactTestUtils.renderIntoDocument(<Gallery photos={photosTest} onClickPhoto={onClickPhotoMock} />);
+    const indexPhotoSelected = 0;
 
-    console.log(tree);
+    const tree = ReactTestUtils.renderIntoDocument(<Gallery photos={photosTest} onClickPhoto={onClickPhotoMock} />);
     const galleryItems = ReactTestUtils.scryRenderedComponentsWithType(tree, GalleryItem);
-    console.log(galleryItems.length);
-    // expect(tree.props.children.props.onClick).toEqual(onClickMock);
+
+    expect(onClickPhotoMock).toHaveBeenCalledTimes(0);
+    galleryItems[indexPhotoSelected].props.onClick();
+
+    expect(onClickPhotoMock).toHaveBeenCalledTimes(1);
+    expect(onClickPhotoMock).toHaveBeenCalledWith(photosTest[indexPhotoSelected]);
 });
 
 // test("Renders correctly with photo properties. If photo.media is different to 'video', svg must be red (#f55)", () => {
