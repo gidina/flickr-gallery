@@ -4,7 +4,7 @@ exports[`Renders blue (#5690F7) Loader component if isLoading property is true 1
 <div
   className="gallery_item_full"
 >
-  <LoaderMock
+  <loader-mock
     color="#5690F7"
   />
 </div>
