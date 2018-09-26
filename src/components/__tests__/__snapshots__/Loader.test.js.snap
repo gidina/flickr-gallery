@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly with pink color 1`] = `
+<div
+  className="loader"
+  style={
+    Object {
+      "border": "10px solid #f3f3f3",
+      "borderTop": "10px solid pink",
+    }
+  }
+/>
+`;
