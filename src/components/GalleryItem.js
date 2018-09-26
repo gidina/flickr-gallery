@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { primaryColor, secondaryColor } from "../config";
 
-const GalleryItem = ({photo, onClick}) => 
+const GalleryItem = ({ photo, onClick }) => 
     <div className="gallery_item" onClick={onClick}>
         <span className="gallery_item_preview">
             <button>Click to view</button>
