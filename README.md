@@ -37,7 +37,7 @@ npm start
 
 ## Running the tests
 
-This will run unit tests using Jest in watch mode.
+This will run unit tests using Jest in watch mode. (apiCalls file is not tested)
 
 `
 npm test
