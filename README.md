@@ -28,7 +28,7 @@ npm install
 
 ## Getting Started with a Development server
 
-This will start a server running on port 3000 which will reload the app evertyting it detects changes on the source code.
+This will start a server running on port 3000 which will reload the app everytime it detects changes on the source code.
 The app will be accessible via browser on: http://localhost:3000.
 
 `
