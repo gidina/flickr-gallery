@@ -52,7 +52,7 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-test("Si isLoading és true, es mostra un Loader de color red (#f55)", () => {
+test("If isLoading is true, renders a red color (#f55) Loader", () => {
   getPhotos.mockImplementation(() => Promise.resolve(photosTest));
 
   expect(getPhotos).toHaveBeenCalledTimes(0);
@@ -64,7 +64,7 @@ test("Si isLoading és true, es mostra un Loader de color red (#f55)", () => {
   expect(getPhotos).toHaveBeenCalledWith();
 });
 
-test("Si no s'ha seleccionat cap foto, no es mostra el Modal", async () => {
+test("If there are no selected photo, Modal is not rendered", async () => {
   getPhotos.mockImplementation(() => Promise.resolve(photosTest));
 
   const tree = await renderer.create(<App />);
@@ -72,7 +72,7 @@ test("Si no s'ha seleccionat cap foto, no es mostra el Modal", async () => {
   expect(tree.toJSON()).toMatchSnapshot();
 });
 
-test("Si s'ha seleccionat un video, es mostra el Modal amb la propietat isLoading a true", async () => {
+test("If a video is selected, Modal is rendered with isLoading property true", async () => {
   const photoTests = photosTest[0];
   const expectedPhoto = {
     title: "Photo 1",
@@ -102,7 +102,7 @@ test("Si s'ha seleccionat un video, es mostra el Modal amb la propietat isLoadin
   expect(getPhotosSizes).toHaveBeenCalledWith(photoTests.id);
 });
 
-test("Si s'ha seleccionat una foto, es mostra el Modal amb la propietat isLoading a true", async () => {
+test("If a pgoto is selected, Modal is rendered with isLoading property true", async () => {
   const photoTests = photosTest[1];
   const expectedPhoto = {
     title: "Photo 2",
@@ -132,7 +132,7 @@ test("Si s'ha seleccionat una foto, es mostra el Modal amb la propietat isLoadin
   expect(getPhotosSizes).toHaveBeenCalledWith(photoTests.id);
 });
 
-test("Si s'ha seleccionat una foto i s'ha acabat la petició per obtenir les mides, es mostra el Modal", async () => {
+test("If a photo is selected and the fetch to get sizes is finished, Modal is rendered", async () => {
   const photoTests = photosTest[0];
   getPhotos.mockImplementation(() => Promise.resolve(photosTest));
   getPhotosSizes.mockImplementation(() => Promise.resolve(sizesTest));
@@ -147,7 +147,7 @@ test("Si s'ha seleccionat una foto i s'ha acabat la petició per obtenir les mid
   expect(modalComponent.props.isLoading).toEqual(false);
 });
 
-test("Si es rep l'onClose del modal, es deselecciona la foto", async () => {
+test("If onClose is triggered, there are no selected photo", async () => {
   const photoTests = photosTest[0];
   getPhotos.mockImplementation(() => Promise.resolve(photosTest));
   getPhotosSizes.mockImplementation(() => Promise.resolve(sizesTest));

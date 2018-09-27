@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     isLoading: true,
     fotosGaleria: null,
-    fotoSeleccionada: null,
+    selectedPhoto: null,
     isLoadingModal: false
   };
   componentDidMount = () => {
@@ -27,7 +27,7 @@ class App extends Component {
       );
   };
   onClickCloseModal = () => {
-    this.setState({ ...this.state, fotoSeleccionada: null });
+    this.setState({ ...this.state, selectedPhoto: null });
   };
   onClickPhotoItemHandler = photo => {
     const parametreCerca = photo.media === "video" ? "Video Player" : "Large";
@@ -35,7 +35,7 @@ class App extends Component {
     this.setState({
       ...this.state,
       isLoadingModal: true,
-      fotoSeleccionada: {
+      selectedPhoto: {
         title: photo.title,
         description: photo.description._content,
         username: photo.ownername,
@@ -49,23 +49,23 @@ class App extends Component {
         this.setState({
           ...this.state,
           isLoadingModal: false,
-          fotoSeleccionada: {
-            ...this.state.fotoSeleccionada,
+          selectedPhoto: {
+            ...this.state.selectedPhoto,
             source: getSourceByParam(data, parametreCerca)
           }
         });
       });
   };
   pintaModal = () => {
-    const { fotoSeleccionada, isLoadingModal } = this.state;
+    const { selectedPhoto, isLoadingModal } = this.state;
 
-    if (!fotoSeleccionada) {
+    if (!selectedPhoto) {
       return null;
     }
 
     return <Modal
       isLoading={isLoadingModal}
-      photo={fotoSeleccionada}
+      photo={selectedPhoto}
       onClose={this.onClickCloseModal}
     />
   };

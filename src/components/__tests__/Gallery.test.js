@@ -124,7 +124,7 @@ test(`Mobile or Tablet resolution (<=${breakpointDesktop}): 'Pagination' isn't r
     expect(paginationComponent.length).toEqual(0);
 });
 
-test("onClick GalleryItem, argument: photo", () => {
+test("onClick GalleryItem is triggered with photo", () => {
     const onClickPhotoMock = jest.fn();
     const indexPhotoSelected = 0;
 

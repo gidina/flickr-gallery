@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Si isLoading és true, es mostra un Loader de color red (#f55) 1`] = `
+exports[`If isLoading is true, renders a red color (#f55) Loader 1`] = `
 <loader-mock
   color="#f55"
 />
 `;
 
-exports[`Si no s'ha seleccionat cap foto, no es mostra el Modal 1`] = `
+exports[`If there are no selected photo, Modal is not rendered 1`] = `
 <gallery-mock
   onClickPhoto={[Function]}
   photos={

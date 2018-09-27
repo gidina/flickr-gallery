@@ -4,7 +4,7 @@ import ReactTestUtils from "react-dom/test-utils";
 import renderer from "react-test-renderer";
 import Pagination from "../Pagination";
 
-test("Es renderitzen un total de pàgines corresponent al nombre de fotos total entre el nombre d'elements per pàgina", () => {
+test("Renders as many photos as total/number of elements per pagee", () => {
     const numItemsPage = 8;
     const tree = renderer
         .create(<Pagination numItems={numItemsPage} onPageChange={() => {}} />)
@@ -12,7 +12,7 @@ test("Es renderitzen un total de pàgines corresponent al nombre de fotos total 
     expect(tree).toMatchSnapshot();
 });
 
-test("per defecte es mostren les primeres 8 fotos (onPageChange es crida amb 0, 7) i la primera pàgina està en red (classe 'active')", () => {
+test("First page if default active page", () => {
     const numItemsPage = 8;
 
     const onPageChangeMock = jest.fn();
@@ -27,7 +27,7 @@ test("per defecte es mostren les primeres 8 fotos (onPageChange es crida amb 0, 
     expect(onPageChangeMock).toHaveBeenNthCalledWith(1, 0, numItemsPage - 1);
 });
 
-test("faig click a una pàgina i aquesta passa a ser activa (onPageChange es crida correctament*)", () => {
+test("When a page is clicked, is selected (active)", () => {
     const numItemsPage = 8;
 
     const onPageChangeMock = jest.fn();
@@ -51,7 +51,7 @@ test("faig click a una pàgina i aquesta passa a ser activa (onPageChange es cri
     expect(onPageChangeMock).toHaveBeenNthCalledWith(2, startIndexItem, endIndexItem);
 });
 
-test("faig click a << i la pàgina activa passa a ser l'anterior (excepte si estic a la primera)", () => {
+test("When back button is clicked, go back to the previous page", () => {
     const numItemsPage = 8;
 
     const onPageChangeMock = jest.fn();
@@ -78,7 +78,7 @@ test("faig click a << i la pàgina activa passa a ser l'anterior (excepte si est
     expect(onPageChangeMock).toHaveBeenNthCalledWith(2, startIndexItem, endIndexItem);
 });
 
-test("faig click a >> i la pàgina activa passa a ser la següent (excepte si estic a l'última)", () => {
+test("When forward button is clicked, go to the next page", () => {
     const numItemsPage = 8;
     const defaultActivePage = 0;
     const onPageChangeMock = jest.fn();

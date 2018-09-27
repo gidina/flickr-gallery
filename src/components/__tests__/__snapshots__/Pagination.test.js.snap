@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Es renderitzen un total de pàgines corresponent al nombre de fotos total entre el nombre d'elements per pàgina 1`] = `
+exports[`Renders as many photos as total/number of elements per pagee 1`] = `
 <div
   className="center"
 >
