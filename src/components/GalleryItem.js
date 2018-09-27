@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-
 import { primaryColor, secondaryColor } from "../config";
+import "./GalleryItem.css";
 
 const GalleryItem = ({ photo, onClick }) => 
     <div className="gallery_item" onClick={onClick}>
