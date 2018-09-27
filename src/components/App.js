@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import { getPhotos, getPhotosSizes } from "./commons/consultesServidor";
+import { getPhotos, getPhotosSizes } from "../commons/apiCalls";
 import Loader from "./Loader";
 import Gallery from "./Gallery";
 import Modal from "./Modal";

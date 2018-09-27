@@ -1,12 +1,12 @@
 import React from "react";
 import ReactTestUtils from "react-dom/test-utils";
 import renderer from "react-test-renderer";
-import { getPhotos, getPhotosSizes } from "../commons/consultesServidor";
+import { getPhotos, getPhotosSizes } from "../../commons/apiCalls";
 import App from "../App";
 import Gallery from "../Gallery";
 import Modal from "../Modal";
 
-jest.mock("../commons/consultesServidor");
+jest.mock("../../commons/apiCalls");
 
 jest.mock("../Loader");
 jest.mock("../Modal");
