@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-
 import { secondaryColor } from "../config";
 import Loader from "./Loader";
 import "./Modal.css";

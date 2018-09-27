@@ -1,6 +1,6 @@
 import React from "react";
-import Gallery from "../Gallery";
 import ReactTestUtils from "react-dom/test-utils";
+import Gallery from "../Gallery";
 import GalleryItem from "../GalleryItem";
 import Pagination from "../Pagination";
 

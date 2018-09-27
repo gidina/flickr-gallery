@@ -1,7 +1,7 @@
 import React from "react";
-import GalleryItem from "../GalleryItem";
-import renderer from "react-test-renderer";
 import ReactTestUtils from "react-dom/test-utils";
+import renderer from "react-test-renderer";
+import GalleryItem from "../GalleryItem";
 
 test("Renders correctly with photo properties. If photo.media is 'video', svg must be blue (#5690F7)", () => {
     const photoTest = {

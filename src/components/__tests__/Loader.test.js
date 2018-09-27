@@ -1,6 +1,6 @@
 import React from "react";
-import Loader from "../Loader";
 import renderer from "react-test-renderer";
+import Loader from "../Loader";
 
 test("Renders correctly with pink color", () => {
     const color = "pink";

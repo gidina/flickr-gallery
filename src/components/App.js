@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from "react";
-
 import { getPhotos, getPhotosSizes } from "../commons/apiCalls";
+import { GALLERY_ID, primaryColor } from "../config";
 import Loader from "./Loader";
 import Gallery from "./Gallery";
 import Modal from "./Modal";
-import { GALLERY_ID, primaryColor } from "../config";
 import "./App.css";
 
 const getSourceByParam = (array, parametreCerca) =>
