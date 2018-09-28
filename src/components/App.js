@@ -12,7 +12,7 @@ const getSourceByParam = (array, parametreCerca) =>
 class App extends Component {
   state = {
     isLoading: true,
-    fotosGaleria: null,
+    galleryPhotos: null,
     selectedPhoto: null,
     isLoadingModal: false
   };
@@ -22,7 +22,7 @@ class App extends Component {
         this.setState({
           ...this.state,
           isLoading: false,
-          fotosGaleria: data
+          galleryPhotos: data
         })
       );
   };
@@ -71,14 +71,14 @@ class App extends Component {
   };
 
   render = () => {
-    const { isLoading, fotosGaleria } = this.state;
+    const { isLoading, galleryPhotos } = this.state;
 
     if (isLoading) return <Loader color={primaryColor} />;
     
     return (
       <Fragment>
           <Gallery
-            photos={fotosGaleria}
+            photos={galleryPhotos}
             onClickPhoto={this.onClickPhotoItemHandler}
           />
           {this.renderModal()}
