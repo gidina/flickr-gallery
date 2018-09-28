@@ -56,7 +56,7 @@ class App extends Component {
         });
       });
   };
-  pintaModal = () => {
+  renderModal = () => {
     const { selectedPhoto, isLoadingModal } = this.state;
 
     if (!selectedPhoto) {
@@ -81,7 +81,7 @@ class App extends Component {
             photos={fotosGaleria}
             onClickPhoto={this.onClickPhotoItemHandler}
           />
-          {this.pintaModal()}
+          {this.renderModal()}
       </Fragment>
     );
   };
